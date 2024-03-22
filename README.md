@@ -43,9 +43,9 @@ The project consists of the following main components:
    - Includes Dockerfiles to containerize the environment and facilitate deployment (optional).
 
 ## Attached files
-- **data_exploration_and_analysis.py**: This script run the general exploration and analyse channels more in details
-- **share_prediction.py**: This script prepare the data, train and evaluate the ML model
-- **tv_nova_exploration.ipynb**: This Notebook works as a preparation for the analysis Python file
+- **data_exploration_and_analysis.py**: This script runs the general exploration and analyze channels more in details
+- **share_prediction.py**: This script prepares the data, trains and evaluate the ML model
+- **tv_nova_exploration.ipynb**: This Notebook works as a preparation for the analysis of the Python file
 - **tv_nova_model.ipynb**: This Notebook works as a preparation for the prediction Python file
 - **requirements_analysis.txt**: This file contains all the Python libraries used for data_exploration_and_analysis.py 
 - **requirements_model.txt**: This file contains all the Python libraries used for share_prediction.py
@@ -72,14 +72,14 @@ The project consists of the following main components:
    ```
 
 #### Running the Analysis and Model
-To analyse the data, train the model and make predictions, follow these steps:
+To analyze the data, train the model, and make predictions, follow these steps:
 - Ensure you have a CSV file containing the data (e.g., data_1.csv).
 - Run the main Python script with the path to the CSV file as an argument (e.g.):
     - **for the analysis:**
    ```bash
     python data_exploration_and_analysis.py "./data_1.csv"
    ```
-- The scripts will load the data, run the general exploration and analysis of the data and analyse channels more in details
+- The scripts will load the data, run the general exploration and analysis of the data, and analyse channels more in details
 
     - **for the prediction:**
    ```bash
@@ -110,6 +110,6 @@ Run the Docker container: Once the image is built, you can run it as a container
 docker run -v my_docker_image2
 ```
 
-**NOTE:** Both Docker Images were tested and run succsessfully.
+**NOTE:** Both Docker Images were tested and run successfully.
 
 
