@@ -1,0 +1,15 @@
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file and install dependencies
+COPY requirements_analysis.txt .
+RUN pip install --no-cache-dir -r requirements_analysis.txt
+
+# Copy the Python script and data file to the container
+COPY data_exploration_and_analysis.py .
+COPY data_1.csv .
+
+# Command to run the Python script with the data file as an argument
+CMD ["python", "data_exploration_and_analysis.py", "data_1.csv"]
