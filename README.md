@@ -1,9 +1,9 @@
 # TV Nova Share Prediction Model
 
 This project is split into 3 parts and aims to:
-1. analyze a dataset containing information about television channels, timeslots, and movie IDs. The objective of this part is to draw conclusions about the channels based on the provided data.
+1. analyze a dataset containing information about television channels, timeslots, and movie IDs. The objective of this part is to run a general analysis and draw conclusions about the channels based on the provided data.
 2. building a predictive model to estimate the audience share for a specific demographic ("share 15 54") without using the three-month rolling mean of the audience share. The focus is on utilizing features and the timestamp to make accurate predictions.
-3. leverage the three-month rolling mean of the audience share ("share 15 54 3mo mean") to enhance predictions for the audience share. This task allows the creation of new features and the use of black-box models that can be explained to some extent. The choice of model should consider factors such as cost, interpretability, and performance.
+3. leverage the mean of the audience share ("share 15 54 3mo mean") to enhance predictions for the audience share. This task allows the creation of new features and the use of black-box models that can be explained to some extent. The choice of model should consider factors such as cost, interpretability, and performance.
 
 ## Overview
 
@@ -36,21 +36,21 @@ The project consists of the following main components:
     - Scaling the data
 
 3. **Model Training and Evaluation:**
-   - Trains and evaluates several regression models.
+   - Trains and evaluates the ML model.
    - Uses metrics like Mean Squared Error (MSE), Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R-squared (R^2) score for evaluation.
 
 4. **Dockerization (Optional):**
    - Includes Dockerfiles to containerize the environment and facilitate deployment (optional).
 
 ## Attached files
-- **data_exploration_and_analysis.py**: This script runs the general exploration and analyze channels more in details
-- **share_prediction.py**: This script prepares the data, trains and evaluate the ML model
+- **data_exploration_and_analysis.py**: This script runs the general exploration and analyzes channels more in detail (visualization, etc.)
+- **share_prediction.py**: This script prepares the data, trains, and evaluates the ML model
 - **tv_nova_exploration.ipynb**: This Notebook works as a preparation for the analysis of the Python file
 - **tv_nova_model.ipynb**: This Notebook works as a preparation for the prediction Python file
 - **requirements_analysis.txt**: This file contains all the Python libraries used for data_exploration_and_analysis.py 
 - **requirements_model.txt**: This file contains all the Python libraries used for share_prediction.py
-- **Dockerfile_analysis**: This file contains instructions for building your Docker image.
-- **Dockerfile_prediction**: This file contains instructions for building your Docker image.
+- **Dockerfile_analysis**: This file contains instructions for building your Docker image of the analysis part.
+- **Dockerfile_prediction**: This file contains instructions for building your Docker image of the prediction part.
 
 
 ## Usage
@@ -79,13 +79,13 @@ To analyze the data, train the model, and make predictions, follow these steps:
    ```bash
     python data_exploration_and_analysis.py "./data_1.csv"
    ```
-- The scripts will load the data, run the general exploration and analysis of the data, and analyse channels more in details
+- The scripts will load the data, run the general exploration and analysis of the data, analyze channels more in detail, and return information from the analysis
 
     - **for the prediction:**
    ```bash
     python share_prediction.py "./data_1.csv"
    ```
-- The scripts will load the data, preprocess it, train the model, make predictions, and evaluate the model's performance.
+- The scripts will load the data, preprocess it, train the model, make predictions, evaluate the model's performance, and return essential information.
 
 ### Using Dockerfiles
 You can also use a Dockerfile to build the image for the scripts. Open a terminal and navigate to the directory containing Dockerfiles and Python files. Build the image using the following command:
@@ -97,7 +97,7 @@ You can replace "my_docker_image1" with the desired name for your Docker image.
 
 Run the Docker container: Once the image is built, you can run it as a container:
 ```bash
-docker run -v my_docker_image1
+docker run my_docker_image1
 ```
 - **for the prediction:**
 ```bash
@@ -107,7 +107,7 @@ You can replace "my_docker_image2" with the desired name for your Docker image.
 
 Run the Docker container: Once the image is built, you can run it as a container:
 ```bash
-docker run -v my_docker_image2
+docker run my_docker_image2
 ```
 
 **NOTE:** Both Docker Images were tested and run successfully.
