@@ -1,0 +1,15 @@
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file and install dependencies
+COPY requirements_model.txt .
+RUN pip install --no-cache-dir -r requirements_model.txt
+
+# Copy the Python script and data file to the container
+COPY share_prediction.py .
+COPY data_1.csv .
+
+# Command to run the Python script with the data file as an argument
+CMD ["python", "share_prediction.py", "data_1.csv"]
