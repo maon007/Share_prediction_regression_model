@@ -208,7 +208,6 @@ class SharePredictionModel:
         # We could use also other models like Gradient Boosting Regressor, XGBoost regressor, etc.
         # model = RandomForestRegressor()
         model = GradientBoostingRegressor()
-        # model = xgb.XGBClassifier()
 
         # Train the model
         model.fit(X, y)
