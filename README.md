@@ -1,4 +1,4 @@
-# TV Nova Share Prediction Model
+# Share Prediction Model
 
 This project is split into 3 parts and aims to:
 1. analyze a dataset containing information about television channels, timeslots, and movie IDs. The objective of this part is to run a general analysis and draw conclusions about the channels based on the provided data.
